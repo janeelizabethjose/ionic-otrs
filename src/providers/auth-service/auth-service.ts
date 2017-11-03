@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-/*let apiUrl = 'http://14.1.197.36/ionic-restservice/api/index.php/';*/
-let apiUrl = 'http://localhost/PHP-Slim-Restful/api/';
+let apiUrl = 'http://14.1.197.36/ionic-restservice/api/index.php/';
+//let apiUrl = 'http://localhost/PHP-Slim-Restful/api/';
 /*
   Generated class for the AuthServiceProvider provider.
 
