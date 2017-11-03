@@ -1,0 +1,93 @@
+<ion-header>
+	<ion-navbar>
+		<img ion-right src="assets/imgs/OTRS_logo.png" class="navbarLogo"/>
+		<ion-title>Ticket</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="appBackground">
+	<ion-card>
+	<ion-card-header>
+		Create New Phone Ticket
+	</ion-card-header>
+		
+	<ion-card-content>
+		<ion-list>
+			<ion-item>
+				<ion-label stacked>* Customer user:</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>CustomerID:</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>* To queue:</ion-label>
+				<ion-select>
+					<ion-option value="j">Junk</ion-option>
+					<ion-option value="m">Misc</ion-option>
+					<ion-option value="p">Postmaster</ion-option>
+					<ion-option value="r">Raw</ion-option>
+				</ion-select>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Owner:</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>* Subject:</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>* Text:</ion-label>
+				<ion-textarea placeholder="Enter a description"></ion-textarea>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Attachment:</ion-label>
+				<ion-input type="file"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Next ticket state:</ion-label>
+				<ion-select>
+					<ion-option value="cs">closed successful</ion-option>
+					<ion-option value="cu">closed unsuccessful</ion-option>
+					<ion-option value="o">open</ion-option>
+					<ion-option value="pcp">pending auto close+</ion-option>
+					<ion-option value="pcm">pending auto close-</ion-option>
+					<ion-option value="pr">pending reminder</ion-option>
+				</ion-select>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Pending Date:</ion-label>
+				<ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Priority</ion-label>
+				<ion-select>
+					<ion-option value="1">1 very low</ion-option>
+					<ion-option value="2">2 low</ion-option>
+					<ion-option value="3">3 normal</ion-option>
+					<ion-option value="4">4 high</ion-option>
+					<ion-option value="5">5 very high</ion-option>
+				</ion-select>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Time units(work units):</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<button ion-button full color="success" (click)="signup()">Create Ticket</button>
+		</ion-list>
+	</ion-card-content>
+</ion-card>
+</ion-content>

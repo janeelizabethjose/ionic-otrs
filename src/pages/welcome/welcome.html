@@ -1,0 +1,26 @@
+<ion-content padding id="welcome">
+  <img src="assets/imgs/OTRS_logo.png" class="logo"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <h3>Welcome to Auth Sample</h3>
+          Discover some interesting things
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="success" (click)="signup()">Sign up</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="lightText" (click)="login()">Log in</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

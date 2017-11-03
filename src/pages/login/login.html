@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-navbar>
+		<img ion-right src="assets/imgs/OTRS_logo.png" class="navbarLogo"/>
+		<ion-title>Login</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+<ion-card>
+	<ion-card-header>
+		Login Here
+	</ion-card-header>
+		
+	<ion-card-content>
+	<ion-list>
+	
+		<ion-item>
+			<ion-label fixed>Username</ion-label>
+			<ion-input type="text" value="" [(ngModel)]="userData.username"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label fixed>Password</ion-label>
+			<ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+		</ion-item>
+		
+		<button ion-button block color="primary" (click)="login()">Login</button>
+	
+	</ion-list>
+	</ion-card-content>
+	</ion-card>
+</ion-content>
