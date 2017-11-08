@@ -13,7 +13,9 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TicketPage } from '../pages/ticket/ticket';
+import { ReportIncidentPage } from '../pages/report-incident/report-incident';
 import { RaiseRequestPage } from '../pages/raise-request/raise-request';
+import { RegisterComplaintPage } from '../pages/register-complaint/register-complaint';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -29,7 +31,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     TicketPage,
-    RaiseRequestPage
+		ReportIncidentPage,
+    RaiseRequestPage,
+		RegisterComplaintPage
   ],
   imports: [
     BrowserModule, HttpModule,
@@ -46,7 +50,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     TicketPage,
-    RaiseRequestPage
+		ReportIncidentPage,
+    RaiseRequestPage,
+		RegisterComplaintPage
   ],
   providers: [
     StatusBar,
