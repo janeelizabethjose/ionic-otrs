@@ -13,6 +13,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TicketPage } from '../pages/ticket/ticket';
+import { RaiseRequestPage } from '../pages/raise-request/raise-request';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +28,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    TicketPage
+    TicketPage,
+    RaiseRequestPage
   ],
   imports: [
     BrowserModule, HttpModule,
@@ -43,7 +45,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    TicketPage
+    TicketPage,
+    RaiseRequestPage
   ],
   providers: [
     StatusBar,

@@ -7,6 +7,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { TicketPage } from '../pages/ticket/ticket';
+import { RaiseRequestPage } from '../pages/raise-request/raise-request';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,8 +18,6 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-    // Okay, so the platform is ready and our plugins are available.
-    // Here you can do any higher level native things you might need.
     statusBar.styleDefault();
     splashScreen.hide();
     });
@@ -35,5 +34,9 @@ export class MyApp {
   
   goTicket(Page) {
     this.nav.push(TicketPage);
+  }
+  
+  goRaiseTicket(Page) {
+    this.nav.push(RaiseRequestPage);
   }
 }
