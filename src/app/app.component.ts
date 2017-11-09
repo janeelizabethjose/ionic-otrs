@@ -30,7 +30,7 @@ export class MyApp {
 		//this.nav.setRoot(AboutPage);
 	}
 	
-	goContact(Page) {    
+	goContact(Page) {
 		this.nav.push(ContactPage);
 	}
 	
