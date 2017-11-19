@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <img ion-right src="assets/imgs/OTRS_logo.png" class="navbarLogo"/>
-    <ion-title>Home</ion-title>
+    <ion-title>SELF SERVICE PORTAL</ion-title>
   	<!-- <div class="logout"><button ion-button color="secondary" (click)="logout()">Logout</button></div> -->
   
   <ion-buttons left>
@@ -25,4 +25,39 @@
 <ion-content padding>
   <h3>Welcome {{userDetails.name}}</h3>
   <h3>Email: {{userDetails.email}}</h3>
+  <!-- <button ion-button color="secondary" (click)="logout()">Logout</button> -->
+<button ion-button icon-start class="btnSize">
+  Report an Incident
+</button>
+
+<button ion-button icon-end class="btnSize">
+  Raise a Request
+  <!-- <ion-icon name="btn1"></ion-icon> -->
+</button>
+
+<button ion-button icon-start class="btnSize">
+  Register a Complaint
+</button>
+
+<button ion-button icon-end class="btnSize">
+  Knowledge Base
+</button>
+<!-- <ion-grid class="gridView">
+  <ion-row>
+    <ion-col>
+      1 of 2
+    </ion-col>
+    <ion-col>
+      2 of 2
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      1 of 3
+    </ion-col>
+    <ion-col>
+      2 of 3
+    </ion-col>
+  </ion-row>
+</ion-grid> -->
 </ion-content>
