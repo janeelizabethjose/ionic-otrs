@@ -14,17 +14,22 @@
 	<ion-card-content>
 		<ion-list>
 			<ion-item>
-				<ion-label stacked>* Customer user:</ion-label>
+				<ion-label stacked>* Call Source:</ion-label>
 				<ion-input type="text"></ion-input>
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>CustomerID:</ion-label>
+				<ion-label stacked>* Type:</ion-label>
 				<ion-input type="text"></ion-input>
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>* To queue:</ion-label>
+				<ion-label stacked>* AD ID:</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Call Status:</ion-label>
 				<ion-select>
 					<ion-option value="j">Junk</ion-option>
 					<ion-option value="m">Misc</ion-option>
@@ -34,27 +39,33 @@
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>Owner:</ion-label>
+				<ion-label stacked>Category:</ion-label>
 				<ion-input type="text"></ion-input>
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>* Subject:</ion-label>
+				<ion-label stacked>* Sub Category:</ion-label>
 				<ion-input type="text"></ion-input>
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>* Text:</ion-label>
-				<ion-textarea placeholder="Enter a description"></ion-textarea>
+				<ion-label stacked>3rd Party Ref No:</ion-label>
+				<ion-input type="text"></ion-input>
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>Attachment:</ion-label>
-				<ion-input type="file"></ion-input>
+				<ion-label stacked>* Service:</ion-label>
+				<ion-input type="text"></ion-input>
+				<!-- <ion-textarea placeholder="Enter a description"></ion-textarea> -->
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>Next ticket state:</ion-label>
+				<ion-label stacked>* Service Level Agreement:</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			
+			<ion-item>
+				<ion-label stacked>Adjust SLA:</ion-label>
 				<ion-select>
 					<ion-option value="cs">closed successful</ion-option>
 					<ion-option value="cu">closed unsuccessful</ion-option>
@@ -66,24 +77,23 @@
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>Pending Date:</ion-label>
-				<ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime>
+				<ion-label stacked>* Summary:</ion-label>
+				<ion-input type="text"></ion-input>
+				<!-- <ion-datetime displayFormat="DD/MM/YYYY"></ion-datetime> -->
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>Priority</ion-label>
+				<ion-label stacked>Options:</ion-label>
 				<ion-select>
 					<ion-option value="1">1 very low</ion-option>
 					<ion-option value="2">2 low</ion-option>
 					<ion-option value="3">3 normal</ion-option>
-					<ion-option value="4">4 high</ion-option>
-					<ion-option value="5">5 very high</ion-option>
 				</ion-select>
 			</ion-item>
 			
 			<ion-item>
-				<ion-label stacked>Time units(work units):</ion-label>
-				<ion-input type="text"></ion-input>
+				<ion-label stacked>*Call Details:</ion-label>
+				<ion-textarea placeholder="Enter a description"></ion-textarea>
 			</ion-item>
 			
 			<button ion-button full color="success" (click)="signup()">Create Ticket</button>

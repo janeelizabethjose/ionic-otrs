@@ -49,4 +49,14 @@ export class MyApp {
 	goRegisterComplaint(Page) {
 		this.nav.push(RegisterComplaintPage);
 	}
+	
+	goLogout(){
+		localStorage.clear();
+		setTimeout(() => this.backToWelcome(), 1000);
+	}
+	
+	backToWelcome(){
+		this.nav.setRoot(WelcomePage);
+	}
+	
 }

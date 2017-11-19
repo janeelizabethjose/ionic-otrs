@@ -1,14 +1,14 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" swipeEnabled="false">
 	<ion-content padding>
 		<ion-list>
-			<ion-item (click)="goAbout()">
+			<!-- <ion-item (click)="goAbout()">
 				About
 			</ion-item>			
 			<ion-item (click)="goContact()">
 				Contact
-			</ion-item>
+			</ion-item> -->
 			<ion-item (click)="goTicket()">
-				Ticket
+				Create Ticket
 			</ion-item>
 			<ion-item (click)="goReportIncident()">
 				Report an Incident
@@ -18,6 +18,9 @@
 			</ion-item>
 			<ion-item (click)="goRegisterComplaint()">
 				Register a Complaint
+			</ion-item>
+			<ion-item (click)="goLogout()">
+				Logout
 			</ion-item>
 		</ion-list>
 	</ion-content>
