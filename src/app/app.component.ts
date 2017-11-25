@@ -4,8 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { WelcomePage } from '../pages/welcome/welcome';
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+//import { AboutPage } from '../pages/about/about';
+//import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
 import { TicketPage } from '../pages/ticket/ticket';
 import { ReportIncidentPage } from '../pages/report-incident/report-incident';
 import { RaiseRequestPage } from '../pages/raise-request/raise-request';
@@ -24,6 +25,7 @@ export class MyApp {
 		this.initializeApp();
 
 		this.pages = [
+		  { title: 'Dashboard', component: HomePage },
 	      { title: 'Create Ticket', component: TicketPage },
 	      { title: 'Report Incident', component: ReportIncidentPage },
 	      { title: 'Raise Request', component: RaiseRequestPage },
