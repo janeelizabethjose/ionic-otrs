@@ -12,19 +12,10 @@
   
   </ion-navbar>
 </ion-header>
-<!-- <ion-menu [content]="mycontent">
-  <ion-content>
-    <ion-list>
-      <p>some menu content, could be list items</p>
-    </ion-list>
-  </ion-content>
-</ion-menu>
-
-<ion-nav #mycontent [root]="rootPage"></ion-nav> -->
 
 <ion-content padding>
-  <h3>Welcome {{userDetails.name}}</h3>
-  <h3>Email: {{userDetails.email}}</h3>
+  <p>Welcome {{userDetails.name}}</p>
+  <p>Email: {{userDetails.email}}</p>
   <!-- <button ion-button color="secondary" (click)="logout()">Logout</button> -->
 <button ion-button icon-start class="btnSize" (click)="reportIncident()">
   Report an Incident
@@ -42,22 +33,28 @@
 <button ion-button icon-end class="btnSize" (click)="knowledgeBase()">
   Knowledge Base
 </button>
-<!-- <ion-grid class="gridView">
+
+<ion-grid >
+ <!--  <ion-row wrap *ngFor="let res of ResArray"> -->
+  <ion-row class="header">
+    <ion-col col-3>No.</ion-col>
+    <ion-col col-5>Title</ion-col>
+    <ion-col col-2>Action</ion-col>
+  </ion-row>
   <ion-row>
-    <ion-col>
-      1 of 2
-    </ion-col>
-    <ion-col>
-      2 of 2
+    <ion-col col-3>IM1001</ion-col>
+    <ion-col col-5>Unable to Login</ion-col>
+    <ion-col col-2> 
+      <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button>
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col>
-      1 of 3
-    </ion-col>
-    <ion-col>
-      2 of 3
+    <ion-col col-3>IM1002</ion-col>
+    <ion-col col-5>New Laptop - Apple</ion-col>
+    <ion-col col-2> 
+      <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button>
     </ion-col>
   </ion-row>
 </ion-grid>
-</ion-content> -->
+</ion-content>
+
