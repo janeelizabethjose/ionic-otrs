@@ -1,14 +1,14 @@
 <ion-header>
 	<ion-navbar>
 		<img ion-right src="assets/imgs/OTRS_logo.png" class="navbarLogo"/>
-		<ion-title>Ticket</ion-title>
+		<ion-title>Create Ticket</ion-title>
 	</ion-navbar>
 </ion-header>
 
 <ion-content padding class="appBackground">
 	<ion-card>
 	<ion-card-header>
-		Create Ticket
+		Ticket Details
 	</ion-card-header>
 		
 	<ion-card-content>
@@ -93,7 +93,8 @@
 			
 			<ion-item>
 				<ion-label stacked>*Call Details:</ion-label>
-				<ion-textarea placeholder="Enter a description"></ion-textarea>
+				<ion-textarea placeholder="Enter a description"  style="font-size: small;">
+				</ion-textarea>
 			</ion-item>
 			
 			<button ion-button full color="success" (click)="signup()">Create Ticket</button>
