@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule, MenuController } from 'ionic-angular';
 import { WelcomePage } from './welcome';
 
 @NgModule({
@@ -10,4 +10,8 @@ import { WelcomePage } from './welcome';
     IonicPageModule.forChild(WelcomePage),
   ],
 })
-export class WelcomePageModule {}
+export class WelcomePageModule {
+	constructor(public menuCtrl: MenuController) {
+		this.menuCtrl.swipeEnable(false);
+	}
+}

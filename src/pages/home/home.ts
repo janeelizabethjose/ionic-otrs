@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, App } from 'ionic-angular';
+import { NavController, App, MenuController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 import { ReportIncidentPage } from '../report-incident/report-incident';
@@ -18,7 +18,7 @@ export class HomePage {
 
 	userPostData = {"user_id":"","token":""};
 
-	constructor(public navCtrl: NavController, public app: App, public authService : AuthServiceProvider) {
+	constructor(public navCtrl: NavController, public app: App, public authService : AuthServiceProvider, public menuCtrl: MenuController) {
 	
 	const data = JSON.parse(localStorage.getItem('userData'));
 	if(data){

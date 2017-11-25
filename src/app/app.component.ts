@@ -18,45 +18,38 @@ export class MyApp {
 	rootPage:any = WelcomePage;
 	@ViewChild(Nav) nav:Nav;
 
-	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-		platform.ready().then(() => {
-		statusBar.styleDefault();
-		splashScreen.hide();
-		});
+	pages: Array<{title: string, component: any}>;
+
+	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+		this.initializeApp();
+
+		this.pages = [
+	      { title: 'Create Ticket', component: TicketPage },
+	      { title: 'Report Incident', component: ReportIncidentPage },
+	      { title: 'Raise Request', component: RaiseRequestPage },
+	      { title: 'Register Complaint', component: RegisterComplaintPage },
+	      { title: 'Logout', component: WelcomePage }
+	    ];
+
 	}
 
-	goAbout(Page) {
-		this.nav.push(AboutPage);
-		//this.nav.setRoot(AboutPage);
+	initializeApp() {
+	    this.platform.ready().then(() => {
+	      this.statusBar.styleDefault();
+	      this.splashScreen.hide();
+	    });
+	  }
+
+	openPage(page) {
+		this.nav.setRoot(page.component);
 	}
 	
-	goContact(Page) {
-		this.nav.push(ContactPage);
-	}
-	
-	goTicket(Page) {
-		this.nav.push(TicketPage);
-	}
-	
-	goReportIncident(Page) {
-		this.nav.push(ReportIncidentPage);
-	}
-	
-	goRaiseRequest(Page) {
-		this.nav.push(RaiseRequestPage);
-	}
-	
-	goRegisterComplaint(Page) {
-		this.nav.push(RegisterComplaintPage);
-	}
-	
-	goLogout(){
+	/*goLogout(){
 		localStorage.clear();
 		setTimeout(() => this.backToWelcome(), 1000);
 	}
 	
 	backToWelcome(){
 		this.nav.setRoot(WelcomePage);
-	}
-	
+	}*/
 }

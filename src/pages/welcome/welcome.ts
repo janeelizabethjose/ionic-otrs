@@ -15,12 +15,17 @@ export class WelcomePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   /*if(localStorage.getItem('userData')){
-     this.navCtrl.setRoot(TabsPage);
+     this.navCtrl.setRoot(WelcomePage);
    }*/
    
   }
 
   ionViewDidLoad() {
+    if( localStorage.getItem("userData") ){
+        console.log('here');
+        localStorage.clear();
+        //this.navCtrl.setRoot(StartPage);
+        }
     console.log('ionViewDidLoad WelcomePage');
   }
 
