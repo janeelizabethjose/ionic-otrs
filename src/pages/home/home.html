@@ -45,24 +45,28 @@
 </ion-row>
 </ion-grid>
 
-<ion-grid class="headerCol">
+<ion-grid class="gridCol">
  <!--  <ion-row wrap *ngFor="let res of ResArray"> -->
-  <ion-row>
-    <ion-col col-2>No.</ion-col>
-    <ion-col col-5>Title</ion-col>
+ <ion-row>
+    <ion-col col-6><button ion-button class="tabButton">Open</button></ion-col>
+    <ion-col col-6><button ion-button class="tabButton">Closed</button></ion-col>
+  </ion-row>
+  <ion-row class="headerCol">
+    <ion-col col-3>No.</ion-col>
+    <ion-col col-6>Title</ion-col>
     <ion-col col-2>Action</ion-col>
   </ion-row>
   <ion-row>
-    <ion-col col-2>IM1001</ion-col>
-    <ion-col col-5>Unable to Login</ion-col>
+    <ion-col col-3>IM1001</ion-col>
+    <ion-col col-6>Unable to Login</ion-col>
     <ion-col col-2>
       <button ion-button class="updateBtn">Update</button>
       <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
     </ion-col>
   </ion-row>
   <ion-row>
-    <ion-col col-2>IM1002</ion-col>
-    <ion-col col-5>New Laptop - Apple</ion-col>
+    <ion-col col-3>IM1002</ion-col>
+    <ion-col col-6>New Laptop - Apple</ion-col>
     <ion-col col-2>
       <button ion-button class="updateBtn">Update</button>
       <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->

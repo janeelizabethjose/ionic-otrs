@@ -15,7 +15,7 @@
 }
 .btnSize{
 	font-size:10px;
-	width: 135px;
+	width: 140px;
 	height:70px;
 	border-radius:7px;
 }
@@ -35,7 +35,17 @@ page-home {
 	   // flex-direction: column;
 	//}
 }
-.headerCol{
+.gridCol{
 	font-size:12px;
 	background-color:#DCDCDC;
+}
+.headerCol{
+	background-color:#000066;
+	color:#FFF;
+}
+.tabButton{
+	background-color:#4c4cff;
+	font-size:12px;
+	width: 100%;
+	height:25px;
 }

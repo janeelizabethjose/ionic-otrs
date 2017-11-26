@@ -11,6 +11,7 @@ import { TicketPage } from '../pages/ticket/ticket';
 import { ReportIncidentPage } from '../pages/report-incident/report-incident';
 import { RaiseRequestPage } from '../pages/raise-request/raise-request';
 import { RegisterComplaintPage } from '../pages/register-complaint/register-complaint';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
@@ -43,7 +44,7 @@ export class MyApp {
 	  }
 
 	openPage(page) {
-		this.nav.setRoot(page.component);
+		this.nav.setRoot(TabsPage, {nav : page.component});
 	}
 	
 	/*goLogout(){
