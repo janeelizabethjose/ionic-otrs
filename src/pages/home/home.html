@@ -16,25 +16,36 @@
 <ion-content padding>
   <p>Welcome {{userDetails.name}}</p>
   <p>Email: {{userDetails.email}}</p>
-  <div>
-<button ion-button icon-start class="btnSize" (click)="reportIncident()">
-  Report an Incident
-</button>
 
-<button ion-button icon-end class="btnSize" (click)="raiseRequest()">
-  Raise a Request
-  <!-- <ion-icon name="btn1"></ion-icon> -->
-</button>
+<ion-grid>
+<ion-row>
+  <ion-col col-4>
+    <button ion-button icon-start class="btnSize" (click)="reportIncident()">
+      Report an Incident
+    </button>
+  </ion-col>
+  <ion-col col-4 style="padding-left: 50px">
+  <button ion-button icon-end class="btnSize" (click)="raiseRequest()">
+    Raise a Request
+    <!-- <ion-icon name="btn1"></ion-icon> -->
+  </button>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col col-4>
+  <button ion-button icon-start class="btnSize" (click)="registerComplaint()">
+    Register a Complaint
+  </button>
+  </ion-col>
+  <ion-col col-4 style="padding-left: 50px">
+  <button ion-button icon-end class="btnSize" (click)="knowledgeBase()">
+    Knowledge Base
+  </button>
+</ion-col>
+</ion-row>
+</ion-grid>
 
-<button ion-button icon-start class="btnSize" (click)="registerComplaint()">
-  Register a Complaint
-</button>
-
-<button ion-button icon-end class="btnSize" (click)="knowledgeBase()">
-  Knowledge Base
-</button>
-
-<ion-grid medium class="headerCol">
+<ion-grid class="headerCol">
  <!--  <ion-row wrap *ngFor="let res of ResArray"> -->
   <ion-row>
     <ion-col col-2>No.</ion-col>
@@ -58,6 +69,5 @@
     </ion-col>
   </ion-row>
 </ion-grid>
-</div>
 </ion-content>
 
