@@ -15,6 +15,8 @@ export class HomePage {
 
 	userDetails : any;
 	responseData: any;
+	buttonOpenColor: string = '#345465';
+	buttonClosedColor: string = '#4c4cff';
 
 	userPostData = {"user_id":"","token":""};
 
@@ -31,6 +33,11 @@ export class HomePage {
 	}
 }
 
+ionViewDidLoad() {
+  this.hideOpen = true;
+  this.hideClosed = false;
+}
+
 reportIncident(){
   this.navCtrl.push(ReportIncidentPage);
 }
@@ -44,8 +51,28 @@ registerComplaint(){
 }
 
 knowledgeBase(){
-console.log('knowledgeBase');
+	console.log('knowledgeBase');
   //this.navCtrl.push(RegisterComplaintPage);
+}
+
+openTickets(){
+this.hideClosed = false;
+this.hideOpen = true;
+this.buttonOpenColor = '#345465';
+this.buttonClosedColor = '#4c4cff';
+/*
+ FUNCTION CODE
+*/
+}
+
+closedTickets(){
+this.hideClosed = true;
+this.hideOpen = false;
+this.buttonClosedColor = '#345465';
+this.buttonOpenColor = '#4c4cff';
+/*
+ FUNCTION CODE
+*/
 }
 
 //backToWelcome(){
