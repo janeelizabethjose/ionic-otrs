@@ -17,7 +17,8 @@ export class HomePage {
 	responseData: any;
 	buttonOpenColor: string = '#345465';
 	buttonClosedColor: string = '#4c4cff';
-
+	hideOpen : any;
+	hideClosed : any;
 	userPostData = {"user_id":"","token":""};
 
 	constructor(public navCtrl: NavController, public app: App, public authService : AuthServiceProvider, public menuCtrl: MenuController) {
