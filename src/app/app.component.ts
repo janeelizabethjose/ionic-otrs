@@ -44,7 +44,8 @@ export class MyApp {
 	  }
 
 	openPage(page) {
-		this.nav.setRoot(TabsPage, {nav : page.component});
+		//this.nav.setRoot( TabsPage, {nav : page.component} );
+		this.nav.setRoot( page.component );
 	}
 	
 	/*goLogout(){
