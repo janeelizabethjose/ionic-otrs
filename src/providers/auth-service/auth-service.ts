@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 let apiUrl = 'http://14.1.197.36/ionic-restservice/api/index.php/';
-//let apiUrlWS = 'http://18.195.41.230:8080/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRest/Ticket/';
+let apiUrlWS = 'http://18.195.41.230:8080/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRest/Ticket';
 //let apiUrl = 'http://localhost/PHP-Slim-Restful/api/';
 /*
   Generated class for the AuthServiceProvider provider.
@@ -23,6 +23,18 @@ export class AuthServiceProvider {
       let headers = new Headers();
 
       this.http.post(apiUrl + type, JSON.stringify(credentials), {headers: headers})
+        .subscribe(res => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });
+    });
+}
+
+getDataOTRS(credentials) {
+    return new Promise((resolve, reject) => {
+    //let headers = new Headers();
+      this.http.get(apiUrlWS+credentials)
         .subscribe(res => {
           resolve(res.json());
         }, (err) => {

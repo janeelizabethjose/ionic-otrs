@@ -18,6 +18,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 })
 export class MyApp {
 	rootPage:any = WelcomePage;
+	//rootPage:any = HomePage;
 	@ViewChild(Nav) nav:Nav;
 
 	pages: Array<{title: string, component: any}>;
