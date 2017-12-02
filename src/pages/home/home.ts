@@ -72,10 +72,26 @@ err => {
 	console.log('error');
 });*/
 
-this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&State=new').then((result) => {
+this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&State=open').then((result) => {
 	this.responseData = result;
 	if( this.responseData ) {
-		console.log(this.responseData.TicketID);
+		if( 0 < this.responseData.TicketID.length) {
+	        for (let i = 0; i < this.responseData.TicketID.length; i++){
+	            //console.log(this.responseData.TicketID[i]);
+
+				this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?UserLogin=otrsuser&Password=Password@1').then((result) => {
+					console.log(result);
+					this.responseData = result;
+					if( this.responseData ) {
+						console.log('here0');
+					}else {
+						console.log('here1');
+						}
+					}, (err) => {
+						console.log(err);
+				});
+	        }
+		}
 	}else {
 		let alert = this.alertCtrl.create({
 		title: 'Error!',
@@ -87,6 +103,24 @@ this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&State=new'
 	}, (err) => {
 		console.log(err);
 	});
+
+/*this.authService.postTest('otrsuser','Password@1', 'new' ).then((result) => {
+	this.responseData = result;
+	if( this.responseData ) {
+		console.log(this.responseData);
+		
+	}else {
+		let alert = this.alertCtrl.create({
+		title: 'Error!',
+		subTitle: 'Invalid Request!',
+		buttons: ['OK']
+		});
+		alert.present();
+		}
+	}, (err) => {
+		console.log(err);
+	});*/
+
 }
 
 closedTickets(){

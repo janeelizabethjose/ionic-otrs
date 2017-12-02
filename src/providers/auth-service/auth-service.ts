@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, RequestOptions  } from '@angular/http';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/toPromise';
 
 let apiUrl = 'http://14.1.197.36/ionic-restservice/api/index.php/';
 let apiUrlWS = 'http://18.195.41.230:8080/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRest/Ticket';
@@ -42,5 +44,39 @@ getDataOTRS(credentials) {
         });
     });
 }
+
+/*postTest(a,b,c){
+
+let headers = new Headers(
+{
+  'Content-Type' : 'application/json'
+});
+let options = new RequestOptions({ headers: headers });
+
+let data = JSON.stringify({
+  UserLogin: 'otrsuser',
+  Password: 'Password@1',
+  State:'new'
+});
+
+return new Promise((resolve, reject) => {
+  this.http.post(apiUrlWS, data)
+  .toPromise()
+  .then((response) =>
+  {
+    console.log('success');
+    console.log('API Response : ', response.json());
+    resolve(response.json());
+  })
+  .catch((error) =>
+  {
+    console.log('fail');
+    console.error('API Error : ', error.status);
+    console.error('API Error : ', JSON.stringify(error));
+    reject(error.json());
+  });
+});
+
+}*/
 
 }
