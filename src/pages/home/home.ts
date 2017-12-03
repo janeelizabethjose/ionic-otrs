@@ -21,6 +21,7 @@ export class HomePage {
 	buttonClosedColor: string = '#4c4cff';
 	hideOpen : any;
 	hideClosed : any;
+	openTicketResult: any = [];
 	userPostData = {"user_id":"","token":""};
 
 	constructor(public navCtrl: NavController, public app: App, public authService : AuthServiceProvider, public menuCtrl: MenuController, public alertCtrl: AlertController, public http: Http) {
@@ -73,19 +74,19 @@ err => {
 });*/
 
 this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&State=open').then((result) => {
+	
+	//openTicketResult= [];
 	this.responseData = result;
 	if( this.responseData ) {
 		if( 0 < this.responseData.TicketID.length) {
+			this.openTicketResult= [];
 	        for (let i = 0; i < this.responseData.TicketID.length; i++){
-	            //console.log(this.responseData.TicketID[i]);
-
-				this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?UserLogin=otrsuser&Password=Password@1').then((result) => {
-					console.log(result);
-					this.responseData = result;
-					if( this.responseData ) {
-						console.log('here0');
+				this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?UserLogin=otrsuser&Password=Password@1').then((resultTicket) => {
+					this.responseData = resultTicket;
+					if( this.responseData.Ticket ) {
+						 this.openTicketResult.push({TicketID: this.responseData.Ticket[0].TicketID, TicketNumber: this.responseData.Ticket[0].TicketNumber, Title:this.responseData.Ticket[0].Title });
 					}else {
-						console.log('here1');
+						//console.log('here1');
 						}
 					}, (err) => {
 						console.log(err);

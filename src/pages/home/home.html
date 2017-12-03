@@ -61,22 +61,22 @@
     <ion-col col-6>Title</ion-col>
     <ion-col col-2>Action</ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col col-3>IM1001</ion-col>
-    <ion-col col-6>Unable to Login</ion-col>
+  <ion-row wrap *ngFor="let openTicket of openTicketResult">
+    <ion-col col-3>{{openTicket.TicketNumber}}</ion-col>
+    <ion-col col-6>{{openTicket.Title}}</ion-col>
     <ion-col col-2>
       <button ion-button class="updateBtn">Update</button>
       <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
     </ion-col>
   </ion-row>
-  <ion-row>
+ <!--  <ion-row>
     <ion-col col-3>IM1002</ion-col>
     <ion-col col-6>New Laptop - Apple</ion-col>
     <ion-col col-2>
-      <button ion-button class="updateBtn">Update</button>
+      <button ion-button class="updateBtn">Update</button> -->
       <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
-    </ion-col>
-  </ion-row>
+   <!--  </ion-col>
+  </ion-row> -->
 </ion-grid>
 
 
