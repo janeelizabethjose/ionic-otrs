@@ -54,14 +54,12 @@
   </ion-row>
 
 <ion-grid *ngIf="hideOpen">
- <!--  <ion-row wrap *ngFor="let res of ResArray"> -->
-
   <ion-row class="headerCol">
     <ion-col col-3>No.</ion-col>
     <ion-col col-6>Title</ion-col>
     <ion-col col-2>Action</ion-col>
   </ion-row>
-  <ion-row wrap *ngFor="let openTicket of openTicketResult">
+  <ion-row padding wrap *ngFor="let openTicket of openTicketResult">
     <ion-col col-3>{{openTicket.TicketNumber}}</ion-col>
     <ion-col col-6>{{openTicket.Title}}</ion-col>
     <ion-col col-2>
@@ -69,43 +67,24 @@
       <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
     </ion-col>
   </ion-row>
- <!--  <ion-row>
-    <ion-col col-3>IM1002</ion-col>
-    <ion-col col-6>New Laptop - Apple</ion-col>
-    <ion-col col-2>
-      <button ion-button class="updateBtn">Update</button> -->
-      <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
-   <!--  </ion-col>
-  </ion-row> -->
 </ion-grid>
 
 
 <ion-grid *ngIf="hideClosed">
- <!--  <ion-row wrap *ngFor="let res of ResArray"> -->
-
   <ion-row class="headerCol">
     <ion-col col-3>No.</ion-col>
     <ion-col col-6>Title</ion-col>
     <ion-col col-2>Action</ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col col-3>IM1001</ion-col>
-    <ion-col col-6>Server Access Request</ion-col>
-    <ion-col col-2>
-      <button ion-button class="updateBtn">Update</button>
-      <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-3>IM1002</ion-col>
-    <ion-col col-6>Wifi Password Request</ion-col>
+  <ion-row padding wrap *ngFor="let closedTicket of closedTicketResult">
+    <ion-col col-3>{{closedTicket.TicketNumber}}</ion-col>
+    <ion-col col-6>{{closedTicket.Title}}</ion-col>
     <ion-col col-2>
       <button ion-button class="updateBtn">Update</button>
       <!-- <button ion-button class="updateBtn" (click)="gotoDetails(res)">Update</button> -->
     </ion-col>
   </ion-row>
 </ion-grid>
-
 
 </ion-grid>
 </ion-content>

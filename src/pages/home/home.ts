@@ -22,7 +22,8 @@ export class HomePage {
 	hideOpen : any;
 	hideClosed : any;
 	openTicketResult: any = [];
-	userPostData = {"user_id":"","token":""};
+	closedTicketResult: any = [];
+	userPostData = {"user_id":"","token":"", "password":""};
 
 	constructor(public navCtrl: NavController, public app: App, public authService : AuthServiceProvider, public menuCtrl: MenuController, public alertCtrl: AlertController, public http: Http) {
 	
@@ -73,12 +74,12 @@ err => {
 	console.log('error');
 });*/
 
-this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&State=open').then((result) => {
-	
+this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=open').then((result) => {
+//this.authService.getDataOTRS('?UserLogin='+this.userDetails.username+'&Password='+this.userDetails.password+'&StateType=open').then((result) => {	
 	//openTicketResult= [];
 	this.responseData = result;
-	if( this.responseData ) {
-		if( 0 < this.responseData.TicketID.length) {
+	if( this.responseData && this.responseData.TicketID) {
+		//if( 0 < this.responseData.TicketID.length) {
 			this.openTicketResult= [];
 	        for (let i = 0; i < this.responseData.TicketID.length; i++){
 				this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?UserLogin=otrsuser&Password=Password@1').then((resultTicket) => {
@@ -92,11 +93,11 @@ this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&State=open
 						console.log(err);
 				});
 	        }
-		}
+		//}
 	}else {
 		let alert = this.alertCtrl.create({
 		title: 'Error!',
-		subTitle: 'Invalid Request!',
+		subTitle: 'No Tickets Available for the Loggined User!',
 		buttons: ['OK']
 		});
 		alert.present();
@@ -129,9 +130,39 @@ this.hideClosed = true;
 this.hideOpen = false;
 this.buttonClosedColor = '#345465';
 this.buttonOpenColor = '#4c4cff';
-/*
- FUNCTION CODE
-*/
+
+this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=closed').then((result) => {
+	
+	//closedTicketResult= [];
+	this.responseData = result;
+	if( this.responseData && this.responseData.TicketID) {
+		//if( 0 < this.responseData.TicketID.length) {
+			this.closedTicketResult= [];
+	        for (let i = 0; i < this.responseData.TicketID.length; i++){
+				this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?UserLogin=otrsuser&Password=Password@1').then((resultTicketClosed) => {
+					this.responseData = resultTicketClosed;
+					if( this.responseData.Ticket ) {
+						 this.closedTicketResult.push({TicketID: this.responseData.Ticket[0].TicketID, TicketNumber: this.responseData.Ticket[0].TicketNumber, Title:this.responseData.Ticket[0].Title });
+					}else {
+						//console.log('here1');
+						}
+					}, (err) => {
+						console.log(err);
+				});
+	        }
+		//}
+	}else {
+		let alert = this.alertCtrl.create({
+		title: 'Error!',
+		subTitle: 'No Tickets Available for the Loggined User!',
+		buttons: ['OK']
+		});
+		alert.present();
+		}
+	}, (err) => {
+		console.log(err);
+	});
+
 }
 
 /*get_ticket_details(){
