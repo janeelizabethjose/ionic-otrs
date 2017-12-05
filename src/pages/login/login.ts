@@ -38,7 +38,7 @@ export class LoginPage {
 				}
 			}, (err) => {
 				console.log(err);
-});
+			});
   }else {
 	let alert = this.alertCtrl.create({
 	title: 'Error!',

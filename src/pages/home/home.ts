@@ -39,20 +39,20 @@ export class HomePage {
 }
 
 ionViewDidLoad() {
-  this.hideOpen = true;
-  this.hideClosed = false;
+  	this.hideOpen = true;
+  	this.hideClosed = false;
 }
 
 reportIncident(){
-  this.navCtrl.push(ReportIncidentPage);
+  	this.navCtrl.push(ReportIncidentPage);
 }
 
 raiseRequest(){
-  this.navCtrl.push(RaiseRequestPage);
+  	this.navCtrl.push(RaiseRequestPage);
 }
 
 registerComplaint(){
-  this.navCtrl.push(RegisterComplaintPage);
+  	this.navCtrl.push(RegisterComplaintPage);
 }
 
 knowledgeBase(){
@@ -61,10 +61,10 @@ knowledgeBase(){
 }
 
 openTickets(){
-this.hideClosed = false;
-this.hideOpen = true;
-this.buttonOpenColor = '#345465';
-this.buttonClosedColor = '#4c4cff';
+	this.hideClosed = false;
+	this.hideOpen = true;
+	this.buttonOpenColor = '#345465';
+	this.buttonClosedColor = '#4c4cff';
 
 /*this.http.get('http://18.195.41.230:8080/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRest/Ticket/1?UserLogin=otrsuser&Password=Password@1')
 .map(res => res.json()).subscribe(data => {
@@ -76,7 +76,6 @@ err => {
 
 this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=open').then((result) => {
 //this.authService.getDataOTRS('?UserLogin='+this.userDetails.username+'&Password='+this.userDetails.password+'&StateType=open').then((result) => {	
-	//openTicketResult= [];
 	this.responseData = result;
 	if( this.responseData && this.responseData.TicketID) {
 		//if( 0 < this.responseData.TicketID.length) {
@@ -96,9 +95,9 @@ this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=
 		//}
 	}else {
 		let alert = this.alertCtrl.create({
-		title: 'Error!',
-		subTitle: 'No Tickets Available for the Loggined User!',
-		buttons: ['OK']
+			title: 'Error!',
+			subTitle: 'No Tickets Available for the Loggined User!',
+			buttons: ['OK']
 		});
 		alert.present();
 		}
@@ -126,12 +125,12 @@ this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=
 }
 
 closedTickets(){
-this.hideClosed = true;
-this.hideOpen = false;
-this.buttonClosedColor = '#345465';
-this.buttonOpenColor = '#4c4cff';
+	this.hideClosed = true;
+	this.hideOpen = false;
+	this.buttonClosedColor = '#345465';
+	this.buttonOpenColor = '#4c4cff';
 
-this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=closed').then((result) => {
+	this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=closed').then((result) => {
 	
 	//closedTicketResult= [];
 	this.responseData = result;
