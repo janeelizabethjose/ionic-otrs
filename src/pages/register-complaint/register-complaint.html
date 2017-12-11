@@ -21,26 +21,41 @@
 			<ion-list>
 				<ion-item>
 					<ion-label stacked>Title:</ion-label>
-					<ion-input type="text"></ion-input>
+					<ion-input type="text" [(ngModel)]="complaintData.title"></ion-input>
 				</ion-item>
 
 				<ion-item>
 					<ion-label stacked>Department:</ion-label>
-					<ion-select>
-						<ion-option value="j">Type 1</ion-option>
-						<ion-option value="m">Type 2</ion-option>
-						<ion-option value="p">Type 3</ion-option>
-						<ion-option value="r">Type 4</ion-option>
+					<ion-select [(ngModel)]="complaintData.department">
+						<ion-option value="HR">HR</ion-option>
+						<ion-option value="Support">Support</ion-option>
+						<ion-option value="Development">Development</ion-option>
+						<ion-option value="Security">Security</ion-option>
 					</ion-select>
 				</ion-item>
 
 				<ion-item>
 					<ion-label stacked>Description:</ion-label>
-					<ion-textarea placeholder="Enter a description" style="font-size: small;">
+					<ion-textarea [(ngModel)]="complaintData.description" placeholder="Enter a description" style="font-size: small;">
 					</ion-textarea>
 				</ion-item>
 
-				<button ion-button full color="success">Submit</button>
+				<div padding *ngIf="visibility" (click)="toggleArticle()">
+					<h3>
+					 Previous Article Details
+					  <ion-icon color="success" item-right [name]="isArticleShown() ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+					</h3>
+					<ion-item *ngFor="let d of articles; let i=index" text-wrap  [ngClass]="{active: isArticleShown(), show : shownArticle, container: !shownArticle}">
+					<div *ngIf="isArticleShown()">{{d.articleDescription}}</div>
+					</ion-item>
+				</div>
+
+				<div *ngIf="visibility">
+					<button ion-button full color="success" (click)="updateComplaint()">Update</button>
+				</div>
+				<div *ngIf="!visibility">
+					<button ion-button full color="success" (click)="registerComplaint()">Submit</button>
+				</div>
 			</ion-list>
 		</ion-card-content>
 	</ion-card>

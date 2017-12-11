@@ -21,7 +21,8 @@
 			<ion-list>
 				<ion-item>
 					<ion-label stacked>Title:</ion-label>
-					<ion-input type="text" [(ngModel)]="incidentData.title"></ion-input>
+					<ion-input type="text" [(ngModel)]="incidentData.title"> 
+					</ion-input>
 				</ion-item>
 
 				<ion-item>
@@ -39,8 +40,23 @@
 					<ion-textarea [(ngModel)]="incidentData.description" placeholder="Enter a description" style="font-size: small;">
 					</ion-textarea>
 				</ion-item>
+				
+				<div padding *ngIf="visibility" (click)="toggleArticle()">
+					<h3>
+					 Previous Article Details
+					  <ion-icon color="success" item-right [name]="isArticleShown() ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+					</h3>
+					<ion-item *ngFor="let d of articles; let i=index" text-wrap  [ngClass]="{active: isArticleShown(), show : shownArticle, container: !shownArticle}">
+					<div *ngIf="isArticleShown()">{{d.articleDescription}}</div>
+					</ion-item>
+				</div>
 
+				<div *ngIf="visibility">
+					<button ion-button full color="success" (click)="updateReportIncident()">Update</button>
+				</div>
+				<div *ngIf="!visibility">
 				<button ion-button full color="success" (click)="reportIncident()">Submit</button>
+				</div>
 			</ion-list>
 		</ion-card-content>
 	</ion-card>

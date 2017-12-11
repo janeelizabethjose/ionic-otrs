@@ -1,6 +1,8 @@
 {
-  "name": "AuthSample",
+  "name": "Self Service Portal",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

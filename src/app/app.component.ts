@@ -11,7 +11,7 @@ import { TicketPage } from '../pages/ticket/ticket';
 import { ReportIncidentPage } from '../pages/report-incident/report-incident';
 import { RaiseRequestPage } from '../pages/raise-request/raise-request';
 import { RegisterComplaintPage } from '../pages/register-complaint/register-complaint';
-import { TabsPage } from '../pages/tabs/tabs';
+//import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   templateUrl: 'app.html'
