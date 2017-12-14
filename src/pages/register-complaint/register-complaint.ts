@@ -86,17 +86,16 @@ export class RegisterComplaintPage {
 
 		  this.authService.postDataOTRS(this.complaintDataOtrs).then((result) => {
 	      this.responseData = result;
-	      if( this.responseData.TicketID && this.responseData.TicketNumber ) { 	
-	      	this.complaintData.title = '';
-	      	this.complaintData.department = '';
-	      	this.complaintData.description = '';
-	        let alert = this.alertCtrl.create({
-	        title: 'Success!',
-	        subTitle: "Complaint Registered Successfully!",
-	        buttons: ['OK']
-	        });
-	        alert.present();
-	      }else {
+        if( this.responseData.TicketID && this.responseData.TicketNumber ) {  
+          let alert = this.alertCtrl.create({
+          title: 'Success!',
+          subTitle: "Complaint Added Successfully!",
+          buttons: ['OK']
+          });
+          alert.present();
+
+          this.navCtrl.push(HomePage);
+        }else {
 	        let alert = this.alertCtrl.create({
 	        title: 'Error!',
 	        subTitle: "Sorry, something went wrong. Please try again!",
@@ -142,11 +141,10 @@ export class RegisterComplaintPage {
 
     this.authService.postDataUpdateOTRS( this.complaintData.ticketID, this.complaintDataOtrs ).then((result) => {
       this.responseData = result;
-      console.log( this.responseData);
       if( this.responseData.TicketID && this.responseData.TicketNumber ) {  
         let alert = this.alertCtrl.create({
         title: 'Success!',
-        subTitle: "Request Updated Successfully!!",
+        subTitle: "Complaint Updated Successfully!",
         buttons: ['OK']
         });
         alert.present();

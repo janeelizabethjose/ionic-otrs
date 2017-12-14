@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 import { ReportIncidentPage } from '../report-incident/report-incident';
 import { RaiseRequestPage } from '../raise-request/raise-request';
 import { RegisterComplaintPage } from '../register-complaint/register-complaint';
-
+import { KnowledgeBasePage } from '../knowledge-base/knowledge-base';
 
 @Component({
 	selector: 'page-home',
@@ -60,8 +60,7 @@ registerComplaint(){
 }
 
 knowledgeBase(){
-	console.log('knowledgeBase');
-  //this.navCtrl.push(RegisterComplaintPage);
+   this.navCtrl.push(KnowledgeBasePage);
 }
 
 showLoader() {

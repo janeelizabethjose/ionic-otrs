@@ -89,17 +89,15 @@ export class RaiseRequestPage {
 
 		  this.authService.postDataOTRS(this.requestDataOtrs).then((result) => {
 	      this.responseData = result;
-	      if( this.responseData.TicketID && this.responseData.TicketNumber ) { 	
-	      	this.requestData.title = '';
-	      	this.requestData.requestType = '';
-	      	this.requestData.description = '';
-	        let alert = this.alertCtrl.create({
-	        title: 'Success!',
-	        subTitle: "Request Submitted Successfully!",
-	        buttons: ['OK']
-	        });
-	        alert.present();
-	      }else {
+	      if( this.responseData.TicketID && this.responseData.TicketNumber ) {  
+          let alert = this.alertCtrl.create({
+          title: 'Success!',
+          subTitle: "Request Submitted Successfully!",
+          buttons: ['OK']
+          });
+          alert.present();
+          this.navCtrl.push(HomePage);
+        }else {
 	        let alert = this.alertCtrl.create({
 	        title: 'Error!',
 	        subTitle: "Sorry, something went wrong. Please try again!",
@@ -145,17 +143,14 @@ export class RaiseRequestPage {
 
     this.authService.postDataUpdateOTRS( this.requestData.ticketID, this.requestDataOtrs ).then((result) => {
       this.responseData = result;
-      console.log( this.responseData);
       if( this.responseData.TicketID && this.responseData.TicketNumber ) {  
         let alert = this.alertCtrl.create({
         title: 'Success!',
-        subTitle: "Request Updated Successfully!!",
+        subTitle: "Request Updated Successfully!",
         buttons: ['OK']
         });
         alert.present();
-
         this.navCtrl.push(HomePage);
-
       }else {
         let alert = this.alertCtrl.create({
         title: 'Error!',

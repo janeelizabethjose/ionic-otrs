@@ -25,7 +25,6 @@ export class ReportIncidentPage {
 		this.userDetails = data.userData;
 	}
 	if( navParams.get("responseUpdateData") ) {
-		//this.incidentData = navParams.get("responseUpdateData");
 		this.visibility = true;
 		this.incidentData.title = navParams.get("responseUpdateData").Title;
 		this.incidentData.service = navParams.get("responseUpdateData").ServiceID;
@@ -78,16 +77,15 @@ export class ReportIncidentPage {
 
 		  this.authService.postDataOTRS(this.incidentDataOtrs).then((result) => {
 	      this.responseData = result;
-	      if( this.responseData.TicketID && this.responseData.TicketNumber ) { 	
-	      	this.incidentData.title = '';
-	      	this.incidentData.service = '';
-	      	this.incidentData.description = '';
+	      if( this.responseData.TicketID && this.responseData.TicketNumber ) {
 	        let alert = this.alertCtrl.create({
 	        title: 'Success!',
 	        subTitle: "Incident Reported Successfully!",
 	        buttons: ['OK']
 	        });
 	        alert.present();
+
+        	this.navCtrl.push(HomePage);
 	      }else {
 	        let alert = this.alertCtrl.create({
 	        title: 'Error!',
@@ -134,13 +132,10 @@ export class ReportIncidentPage {
 		}
 		this.authService.postDataUpdateOTRS( this.incidentData.ticketID, this.incidentDataOtrs).then((result) => {
 	      this.responseData = result;
-	      if( this.responseData.TicketID && this.responseData.TicketNumber ) { 	
-	      	/*this.incidentData.title = '';
-	      	this.incidentData.service = '';
-	      	this.incidentData.description = '';*/
+	      if( this.responseData.TicketID && this.responseData.TicketNumber ) {
 	        let alert = this.alertCtrl.create({
 	        title: 'Success!',
-	        subTitle: "Incident Report Updated Successfully!!",
+	        subTitle: "Incident Report Updated Successfully!",
 	        buttons: ['OK']
 	        });
 	        alert.present();

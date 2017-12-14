@@ -16,6 +16,7 @@ import { TicketPage } from '../pages/ticket/ticket';
 import { ReportIncidentPage } from '../pages/report-incident/report-incident';
 import { RaiseRequestPage } from '../pages/raise-request/raise-request';
 import { RegisterComplaintPage } from '../pages/register-complaint/register-complaint';
+import { KnowledgeBasePage } from '../pages/knowledge-base/knowledge-base';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TicketPage,
 		ReportIncidentPage,
     RaiseRequestPage,
-		RegisterComplaintPage
+		RegisterComplaintPage,
+    KnowledgeBasePage
   ],
   imports: [
     BrowserModule, HttpModule,
@@ -52,7 +54,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TicketPage,
 		ReportIncidentPage,
     RaiseRequestPage,
-		RegisterComplaintPage
+		RegisterComplaintPage,
+    KnowledgeBasePage
   ],
   providers: [
     StatusBar,
