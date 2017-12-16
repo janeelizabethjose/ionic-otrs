@@ -6,8 +6,9 @@
     </div>
   </ion-navbar>
 </ion-header>
-<ion-content padding class="appBackground">
-  <ion-card>
+
+<ion-content class="pageStyle">
+  <ion-card padding style="height:100%">
     <ion-card-header>
       Registration
     </ion-card-header>
@@ -32,9 +33,9 @@
           <ion-label floating>Password</ion-label>
           <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
         </ion-item>
-
-        <button ion-button full color="success" (click)="signup()">Sign up</button>
-        <a class="aTag" href="#" (click)="login()"> <div class="backLogin"> >>Login Page </div></a>
+        <ion-item>
+          <button ion-button full color="success" (click)="signup()">Sign up</button>
+        </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>

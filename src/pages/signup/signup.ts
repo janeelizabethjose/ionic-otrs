@@ -55,10 +55,4 @@ export class SignupPage {
     alert.present();
  }
 }
-
-  login() {
-    //API Connections
-  this.navCtrl.push(LoginPage);
-  }
-
 }
