@@ -31,7 +31,6 @@ export class ReportIncidentPage {
 		this.incidentData.ticketID = navParams.get("responseUpdateData").TicketID;
 		this.incidentData.ticketNumber = navParams.get("responseUpdateData").TicketNumber;
 		if( navParams.get("responseUpdateData").Article ) {
-			console.log(navParams.get("responseUpdateData").Article);
 			for (let i = 0; i < navParams.get("responseUpdateData").Article.length; i++){
 				this.articles.push({articleID: navParams.get("responseUpdateData").Article[i].ArticleID, articleDescription: navParams.get("responseUpdateData").Article[i].Body });
         	}

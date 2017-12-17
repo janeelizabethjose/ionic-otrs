@@ -1,3 +1,15 @@
 page-knowledge-base {
 
+ion-list:nth-of-type(odd) {
+  ion-item {
+   background-color: #ACCEE6;
+  }
+}
+
+ion-list:nth-of-type(even) {
+  ion-item {
+    background-color: #c0dcf0;
+  }
+}
+
 }

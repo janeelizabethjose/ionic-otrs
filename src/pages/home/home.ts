@@ -18,12 +18,14 @@ export class HomePage {
 	userDetails : any;
 	responseData: any;
 	responseDataTicket: any;
+	//responseDataKB: any;
 	buttonOpenColor: string = '#345465';
 	buttonClosedColor: string = '#4c4cff';
 	hideOpen : any;
 	hideClosed : any;
 	openTicketResult: any = [];
 	closedTicketResult: any = [];
+	knowledgeBaseData: any = [];
 	//responseUpdateData: any = [];
 	userPostData = {"user_id":"","token":"", "password":""};
 
@@ -82,7 +84,7 @@ openTickets(){
 	this.buttonClosedColor = '#4c4cff';
 	this.showLoader();
 	//this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=open').then((result) => {
-	this.authService.getDataOTRS('?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password+'&StateType=open').then((result) => {	
+	this.authService.getDataOTRS('?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password+'&StateType=open').then((result) => {
 	this.responseData = result;
 	if( this.responseData && this.responseData.TicketID) {
 		this.showLoader();
@@ -160,7 +162,6 @@ openTicketDetails(ticketID)	{
 		    		responseUpdateData: this.responseData.Ticket[0]
 		  		});
 			}else if ( this.responseData.Ticket[0].Type && "Service Request" == this.responseData.Ticket[0].Type ) {
-				console.log(this.responseData.Ticket[0]);
 				this.navCtrl.push( RaiseRequestPage, {
 		    		responseUpdateData: this.responseData.Ticket[0]
 		  		});

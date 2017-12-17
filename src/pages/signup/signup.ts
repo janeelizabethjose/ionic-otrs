@@ -3,7 +3,7 @@ import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 import { TabsPage } from '../tabs/tabs';
-import { LoginPage } from '../login/login';
+//import { LoginPage } from '../login/login';
 /**
  * Generated class for the SignupPage page.
  *
