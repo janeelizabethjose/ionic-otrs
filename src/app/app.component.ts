@@ -44,8 +44,9 @@ export class MyApp {
 	    });
 	  }
 
-	openPage(page) {
+	openPage(page, index) {
 		//this.nav.setRoot( TabsPage, {nav : page.component} );
+		//this.nav.setRoot(page.component, {tabIndex: index});
 		this.nav.setRoot( page.component );
 	}
 	
