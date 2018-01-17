@@ -5,9 +5,9 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 
 let apiUrl = 'http://14.1.197.36/ionic-restservice/api/index.php/';
-let apiUrlOtrs = 'http://18.195.41.230:9090/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRest/Ticket';
-let apiUrlUpdateOtrs = 'http://18.195.41.230:9090/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRestUpdated/Ticket';
-let apiUrlKbOtrs = 'http://18.195.41.230:9090/otrs/nph-genericinterface.pl/Webservice/GenericFAQConnectorRest/';
+let apiUrlOtrs = 'http://18.195.41.230/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRest/Ticket';
+let apiUrlUpdateOtrs = 'http://18.195.41.230/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorRestUpdated/Ticket';
+let apiUrlKbOtrs = 'http://18.195.41.230/otrs/nph-genericinterface.pl/Webservice/GenericFAQConnectorRest/';
 //let apiUrl = 'http://localhost/PHP-Slim-Restful/api/';
 /*
   Generated class for the AuthServiceProvider provider.

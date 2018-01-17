@@ -23,6 +23,7 @@ export class HomePage {
 	buttonClosedColor: string = '#4c4cff';
 	hideOpen : any;
 	hideClosed : any;
+	TotalTicket : any;
 	openTicketResult: any = [];
 	closedTicketResult: any = [];
 	knowledgeBaseData: any = [];
@@ -86,21 +87,33 @@ openTickets(){
 	//this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=open').then((result) => {
 	this.authService.getDataOTRS('?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password+'&StateType=open').then((result) => {
 	this.responseData = result;
+	console.log(this.responseData);
 	if( this.responseData && this.responseData.TicketID) {
-		this.showLoader();
-			this.openTicketResult = [];
-	        for (let i = 0; i < this.responseData.TicketID.length; i++){
-				this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password).then((resultTicket) => {
-					this.responseDataTicket = resultTicket;
-					if( this.responseDataTicket.Ticket ) {
-						 this.openTicketResult.push({TicketID: this.responseDataTicket.Ticket[0].TicketID, TicketNumber: this.responseDataTicket.Ticket[0].TicketNumber, Title:this.responseDataTicket.Ticket[0].Title });
-					}else {
-						//console.log('here1');
-						}
-					}, (err) => {
-						console.log(err);
-				});
-	        }
+		this.openTicketResult = [];
+		this.TotalTicket = this.responseData.TotalTicket;
+		this.authService.getDataOTRS('/'+Object.keys(this.responseData.TicketID).join()+'?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password).then((resultTicket) => {
+			this.responseDataTicket = resultTicket;
+			if( this.responseDataTicket.Ticket ) {
+				this.openTicketResult = this.responseDataTicket.Ticket;
+			}else {
+				//console.log('here1');
+				}
+			}, (err) => {
+				console.log(err);
+		});
+
+        /*for (let i = 0; i < this.responseData.TicketID.length; i++){
+			this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password).then((resultTicket) => {
+				this.responseDataTicket = resultTicket;
+				if( this.responseDataTicket.Ticket ) {
+					 this.openTicketResult.push({TicketID: this.responseDataTicket.Ticket[0].TicketID, TicketNumber: this.responseDataTicket.Ticket[0].TicketNumber, Title:this.responseDataTicket.Ticket[0].Title });
+				}else {
+					//console.log('here1');
+					}
+				}, (err) => {
+					console.log(err);
+			});
+        }*/
 	}else {
 		let alert = this.alertCtrl.create({
 			title: 'Error!',
@@ -125,8 +138,19 @@ closedTickets(){
 	//this.authService.getDataOTRS('?UserLogin=otrsuser&Password=Password@1&StateType=closed').then((result) => {
 	this.responseData = result;
 	if( this.responseData && this.responseData.TicketID) {
-		this.closedTicketResult= [];
-        for (let i = 0; i < this.responseData.TicketID.length; i++){
+		this.closedTicketResult = [];
+		this.authService.getDataOTRS('/'+Object.keys(this.responseData.TicketID).join()+'?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password).then((resultTicketClosed) => {
+			this.responseData = resultTicketClosed;
+			if( this.responseData.Ticket ) {
+				 this.closedTicketResult = this.responseData.Ticket;
+			}else {
+				//console.log('here1');
+				}
+			}, (err) => {
+				console.log(err);
+		});
+
+        /*for (let i = 0; i < this.responseData.TicketID.length; i++){
 			this.authService.getDataOTRS('/'+this.responseData.TicketID[i]+'?CustomerUserLogin='+this.userDetails.username+'&Password='+this.userDetails.password).then((resultTicketClosed) => {
 				this.responseData = resultTicketClosed;
 				if( this.responseData.Ticket ) {
@@ -137,7 +161,7 @@ closedTickets(){
 				}, (err) => {
 					console.log(err);
 			});
-        }
+        }*/
 	}else {
 		let alert = this.alertCtrl.create({
 			title: 'Error!',

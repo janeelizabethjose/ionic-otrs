@@ -32,7 +32,17 @@ export class KnowledgeBasePage {
 	if( this.responseData && this.responseData.ID) {
 		this.showLoader();
 		this.knowledgeBaseData = [];
-        for (let i = 0; i < this.responseData.ID.length; i++){
+		this.authService.getDataKbOTRS( 'FAQ/'+this.responseData.ID.join()+'?GetAttachmentContents=0' ).then((resultKB) => {
+			this.responseDataKB = resultKB;
+			if( this.responseDataKB.FAQItem ) {
+				this.knowledgeBaseData = this.responseDataKB.FAQItem;
+			}else {
+			}
+			}, (err) => {
+				console.log(err);
+		});
+        /*}*/
+        /*for (let i = 0; i < this.responseData.ID.length; i++){
 			this.authService.getDataKbOTRS( 'FAQ/'+this.responseData.ID[i]+'?GetAttachmentContents=0' ).then((resultKB) => {
 				this.responseDataKB = resultKB;
 				if( this.responseDataKB.FAQItem ) {
@@ -42,7 +52,7 @@ export class KnowledgeBasePage {
 				}, (err) => {
 					console.log(err);
 			});
-        }
+        }*/
 
 	}else {
 		let alert = this.alertCtrl.create({
